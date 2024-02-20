@@ -2,61 +2,44 @@ function hideElementById(elementId){
     const element = document.getElementById(elementId);
     element.classList.add('hidden');
 }
-
 function showElementById(elementId){
     const element = document.getElementById(elementId);
     element.classList.remove('hidden');
 }
-
-function setBackGroundColorById(elementId){
-    const element = document.getElementById(elementId);
-    element.classList.add('bg-orange-400');
-}
-
-function removeBackgroundColorById(elementId){
-    const element = document.getElementById(elementId);
-    element.classList.remove('bg-orange-400');
-}
-
-function getTextElementValueById(elementId){
-    const element = document.getElementById(elementId);
-    const elementValueText = element.innerText;
-    const value = parseInt(elementValueText);
-    return value;
-}
-
-function setTextElementValueById(elementId, value){
-    const element = document.getElementById(elementId);
-    element.innerText = value;
-}
-
-function getElementTextById(elementId){
-    const element = document.getElementById(elementId);
-    const text = element.innerText;
-    return text;
-}
-
 function getARandomAlphabet(){
-    //get or create an alphabet array
+    // get or create an alphabet array
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
     const alphabets = alphabetString.split('');
     // console.log(alphabets);
 
-    //get a random index between 0 -25
-    const randomNumber = Math.random()*25;
+    // get a random index between 0 -25
+    const randomNumber = Math.random() * 25;
     const index = Math.round(randomNumber);
-
+    // console.log(index);
 
     const alphabet = alphabets[index];
-    // console.log(index, alphabet);
     return alphabet;
 }
-
-// function rNum (){
-//     let i = Math.random()*100;
-//     while(i < 50){
-//         i = Math.random()*100;
-//     }
-//     return i;
-// }
-// console.log(rNum);
+function setBackGroundColorById(elementId){
+    const element = document.getElementById(elementId);
+    element.classList.add('bg-orange-400');
+}
+function removeBackgroundColorById(elementId){
+    const element = document.getElementById(elementId);
+    element.classList.remove('bg-orange-400');
+}
+function getTextElementValueById(elementId){
+    const element = document.getElementById(elementId);
+    const elementValueById = element.innerText;
+    const value = parseInt(elementValueById);
+    return value;
+}
+function setTextElementValueById(elementId, value){
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+}
+function getTextElementById(elementId){
+    const element = document.getElementById(elementId);
+    const text = element.innerText;
+    return text;
+}
