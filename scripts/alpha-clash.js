@@ -26,6 +26,7 @@ function continueGame(){
 document.addEventListener('keyup', handleKeyboardButtonPress)
 // capture keyboard key press
 let isGamePlayOn = false;
+const artBoard = document.getElementById('art-board');
 function handleKeyboardButtonPress(event){
     if(isGamePlayOn == false){
         return;
@@ -69,8 +70,12 @@ function handleKeyboardButtonPress(event){
     else{
         audio.src = "../audio/lost.mp3";
         audio.play();
+
+
         const currentLife = getTextElementValueById('current-life');
         const updatedLife = currentLife - 1;
+        const updatedLifePercentage = (updatedLife / 5) * 100;
+        artBoard.style.background = `Linear-gradient(#FFFFFFB3 ${updatedLifePercentage}%, red)`;
         setTextElementValueById('current-life', updatedLife);
 
         if(updatedLife === 0){
@@ -97,4 +102,5 @@ function gameOver(){
     removeBackgroundColorById(currentAlphabet);
 
     isGamePlayOn = false;
+    artBoard.style.background = 'Linear-gradient(#FFFFFFB3 100%, red)'
 }
